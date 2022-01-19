@@ -1,8 +1,12 @@
-import React from 'react';
+import React from "react";
 
-import { Section, SectionText, SectionTitle } from '../../styles/GlobalComponents';
-import Button from '../../styles/GlobalComponents/Button';
-import { LeftSection } from './HeroStyles';
+import {
+  Section,
+  SectionText,
+  SectionTitle,
+} from "../../styles/GlobalComponents";
+import Button from "../../styles/GlobalComponents/Button";
+import { LeftSection } from "./HeroStyles";
 
 const Hero = (props) => (
   <>
@@ -13,9 +17,14 @@ const Hero = (props) => (
           My Personal Portfolio
         </SectionTitle>
         <SectionText>
-        The purpose of JavaScript Mastery is to help aspiring and established developers to take their development skills to the next level and build awesome apps.
+          Native Turkish Translator, self taught developer. I am a passionate
+          and creative person who loves to create and build things.
         </SectionText>
-        <Button onClick={props.handleClick}>Learn More</Button>
+        <Button
+          onClick={() => (window.location = "mailto:vedatkoekmen@gmail.com")}
+        >
+          Contact Me
+        </Button>
       </LeftSection>
     </Section>
   </>
