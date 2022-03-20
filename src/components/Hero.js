@@ -4,9 +4,10 @@ import {
 	FaLinkedin,
 	FaInstagram,
 } from "react-icons/fa";
-import React from "react";
+import { forwardRef } from "react";
+import Image from "next/image";
 
-const MyButton = React.forwardRef(
+const MyButton = forwardRef(
 	({ onClick, href, children }, ref) => {
 		return (
 			<a
@@ -26,12 +27,15 @@ function Hero() {
 			<div className="section-center hero-center">
 				<article className="hero-info">
 					<div className="underline"></div>
-					<h1>i'm vedat</h1>
+					<h1>i am vedat</h1>
 					<h4>
 						freelance translator & web
 						developer
 					</h4>
-					<Link href="mailto:vedatkoekmen@gmail.com">
+					<Link
+						href="mailto:vedatkoekmen@gmail.com"
+						passHref
+					>
 						<button className="btn hero-btn">
 							hire me
 						</button>
@@ -72,10 +76,12 @@ function Hero() {
 					</ul>
 				</article>
 				<article className="hero-img">
-					<img
+					<Image
 						src="/5.jpg"
 						className="hero-photo"
-						alt="john doe"
+						alt="vedat kokmen"
+						height="450"
+						width="300"
 					/>
 				</article>
 			</div>

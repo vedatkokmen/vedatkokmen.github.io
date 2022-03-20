@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 function About() {
@@ -9,10 +10,12 @@ function About() {
 			<div className="section-center about-center">
 				{/* <!-- about img --> */}
 				<article>
-					<img
+					<Image
 						src="/blush.svg"
 						className="hero-photo"
 						alt="about img"
+						width="300"
+						height="300"
 					/>
 				</article>
 				{/* <!-- about info --> */}

@@ -6,9 +6,9 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 
-import React from "react";
+import { forwardRef } from "react";
 
-const MyButton = React.forwardRef(
+const MyButton = forwardRef(
 	({ onClick, href, children }, ref) => {
 		return (
 			<a
@@ -69,14 +69,7 @@ function Footer() {
 			</ul>
 
 			<p>
-				&copy;
-				<span id="date">
-					{new Date().getFullYear()} -{" "}
-				</span>
-				<span>
-					Vedat kokmen. all rights
-					reserved
-				</span>
+				Vedat kokmen. all rights reserved
 			</p>
 		</footer>
 	);

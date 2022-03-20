@@ -2,7 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 
 import About from "../src/components/About";
-import Blog from "../src/components/Blog";
 import Hero from "../src/components/Hero";
 import Services from "../src/components/Services";
 import Skills from "../src/components/Skills";
