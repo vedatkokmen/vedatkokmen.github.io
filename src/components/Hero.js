@@ -18,9 +18,9 @@ function Hero() {
         <article className="hero-info">
           <div className="underline"></div>
           <h1>i am vedat</h1>
-          <h4>frontend developer | translator</h4>
+          <h4>web developer | translator</h4>
           <Link href="mailto:vedatkoekmen@gmail.com" passHref>
-            <a>
+            <a target="_blank" rel="noopener noreferrer">
               <button className="btn hero-btn">contact me</button>
             </a>
           </Link>
@@ -28,24 +28,29 @@ function Hero() {
           <ul className="social-icons hero-icons">
             <li>
               <Link href="https://www.github.com/vedatkokmen" passHref>
-                {/* <FaGithub className="social-icon" /> */}
-                <MyButton>
-                  <FaGithub className="social-icon" />
-                </MyButton>
+                <a target="_blank" rel="noopener noreferrer">
+                  <MyButton>
+                    <FaGithub className="social-icon" />
+                  </MyButton>
+                </a>
               </Link>
             </li>
             <li>
               <Link href="https://www.linkedin.com/in/vedatkokmen" passHref>
-                <MyButton>
-                  <FaLinkedin className="social-icon" />
-                </MyButton>
+                <a target="_blank" rel="noopener noreferrer">
+                  <MyButton>
+                    <FaLinkedin className="social-icon" />
+                  </MyButton>
+                </a>
               </Link>
             </li>
             <li>
               <Link href="https://www.instagram.com/vedatkokmen" passHref>
-                <MyButton>
-                  <FaInstagram className="social-icon" />
-                </MyButton>
+                <a target="_blank" rel="noopener noreferrer">
+                  <MyButton>
+                    <FaInstagram className="social-icon" />
+                  </MyButton>
+                </a>
               </Link>
             </li>
           </ul>
