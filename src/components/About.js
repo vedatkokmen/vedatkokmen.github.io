@@ -19,12 +19,12 @@ function About() {
             <div className="underline"></div>
           </div>
           <p>
-            Hi, I am Vedat. I have 8 years of experience as an English-Turkish
-            Translator/Reviewer, where I ensure smooth and culturally
-            appropriate translations while maintaining the original meaning and
-            style. Additionally, I am a self-taught and highly motivated web
-            developer, looking to pursue a career in building web applications
-            and services.
+            Hi, I am Vedat. I have more than 8 years of experience as an
+            English-Turkish Translator/Reviewer, where I ensure smooth and
+            culturally appropriate translations while maintaining the original
+            meaning and style. Additionally, I am a self-taught and highly
+            motivated web developer, looking to pursue a career in building web
+            applications and services.
           </p>
           <p>
             I offer full-stack web development services, specializing in React,
