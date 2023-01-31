@@ -38,7 +38,7 @@ function Skills() {
             <p>Node.js</p>
             <div className="skill-container">
               <div className="skill-value value-70"></div>
-              <p className="skill-text">70%</p>
+              <p className="skill-text skill-text-70">70%</p>
             </div>
           </div>
           <div className="skill">
