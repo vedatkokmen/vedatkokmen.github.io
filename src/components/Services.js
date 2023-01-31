@@ -14,11 +14,11 @@ function Services() {
           <h4>web development</h4>
           <div className="underline"></div>
           <p>
-            As an experienced Translator, I am looking for a Web Developer
-            role/experience. I have been regularly coding for over 2 years and
-            finally, I feel ready to start my developer career. My goal is to
-            gain experience, work in teams and/or individually, learn new
-            skills, master existing ones.
+            With three years of coding experience, I am eager to embark on a
+            career in web development. I am looking for opportunities to gain
+            practical experience, collaborate in both team and individual
+            settings, enhance my skills, and master my current abilities.
+            Although I am currently employed, I am open to new prospects.
           </p>
         </article>
 
@@ -27,9 +27,11 @@ function Services() {
           <h4>translation/review</h4>
           <div className="underline"></div>
           <p>
-            Translation, review, post-editing and QA of UI and UA strings,
-            operator manuals, workshop service manuals, user manuals, etc. for
-            leading international clients within automotive and tech from EN-TR.
+            Specializing in translating and reviewing UI and UA strings,
+            operator manuals, workshop service manuals, and user manuals for
+            leading international clients in the automotive and technology
+            industries, from English to Turkish. Additionally, I provide
+            post-editing and quality assurance services.
           </p>
         </article>
       </div>

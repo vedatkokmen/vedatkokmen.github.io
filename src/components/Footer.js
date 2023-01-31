@@ -17,35 +17,43 @@ function Footer() {
       <ul className="social-icons">
         <li>
           <Link href="mailto:vedatkoekmen@gmail.com" passHref>
-            <MyButton>
-              <FaEnvelope className="social-icon" />
-            </MyButton>
+            <a target="_blank" rel="noopener noreferrer">
+              <MyButton>
+                <FaEnvelope className="social-icon" />
+              </MyButton>
+            </a>
           </Link>
         </li>
         <li>
           <Link href="https://www.github.com/vedatkokmen" passHref>
-            <MyButton>
-              <FaGithub className="social-icon" />
-            </MyButton>
+            <a target="_blank" rel="noopener noreferrer">
+              <MyButton>
+                <FaGithub className="social-icon" />
+              </MyButton>
+            </a>
           </Link>
         </li>
         <li>
           <Link href="https://www.linkedin.com/in/vedatkokmen" passHref>
-            <MyButton>
-              <FaLinkedin className="social-icon" />
-            </MyButton>
+            <a target="_blank" rel="noopener noreferrer">
+              <MyButton>
+                <FaLinkedin className="social-icon" />
+              </MyButton>
+            </a>
           </Link>
         </li>
         <li>
           <Link href="https://www.instagram.com/vedatkokmen" passHref>
-            <MyButton>
-              <FaInstagram className="social-icon" />
-            </MyButton>
+            <a target="_blank" rel="noopener noreferrer">
+              <MyButton>
+                <FaInstagram className="social-icon" />
+              </MyButton>
+            </a>
           </Link>
         </li>
       </ul>
 
-      <p>Vedat kokmen. all rights reserved</p>
+      <p>Vedat kökmen. all rights reserved</p>
     </footer>
   );
 }

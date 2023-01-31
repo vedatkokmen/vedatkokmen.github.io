@@ -20,8 +20,8 @@ function Skills() {
           <div className="skill">
             <p>Javascript</p>
             <div className="skill-container">
-              <div className="skill-value value-70"></div>
-              <p className="skill-text skill-text-70">70%</p>
+              <div className="skill-value value-80"></div>
+              <p className="skill-text skill-text-80">80%</p>
             </div>
           </div>
           <div className="skill">
@@ -42,14 +42,14 @@ function Skills() {
             </div>
           </div>
           <div className="skill">
-            <p>databases</p>
+            <p>C#, ASP.NET</p>
             <div className="skill-container">
-              <div className="skill-value value-80"></div>
-              <p className="skill-text skill-text-80">80%</p>
+              <div className="skill-value value-70"></div>
+              <p className="skill-text skill-text-70">70%</p>
             </div>
           </div>
           <div className="skill">
-            <p>Git</p>
+            <p>Git & Databases</p>
             <div className="skill-container">
               <div className="skill-value value-80"></div>
               <p className="skill-text skill-text-80">80%</p>

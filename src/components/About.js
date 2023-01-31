@@ -19,17 +19,16 @@ function About() {
             <div className="underline"></div>
           </div>
           <p>
-            Hi, my name is Vedat and I am an English - Turkish
-            Translator/Reviewer with 8 years of work experience ensuring
-            seamless style, context, and overall meaning in the target language
-            for all translated materials while applying proper language
-            parameters such as grammar, syntax, semantics, and appropriate
-            terminology. Besides my language skills, I offer excellent computer
-            proficiency, time management and attention to detail.
+            Hi, I am Vedat. I have 8 years of experience as an English-Turkish
+            Translator/Reviewer, where I ensure smooth and culturally
+            appropriate translations while maintaining the original meaning and
+            style. Additionally, I am a self-taught and highly motivated web
+            developer, looking to pursue a career in building web applications
+            and services.
           </p>
           <p>
-            I am also highly motivated self-taught developer seeking to launch a
-            career building web applications and services.
+            I offer full-stack web development services, specializing in React,
+            ASP.NET, and Node.js.
           </p>
         </article>
       </div>
