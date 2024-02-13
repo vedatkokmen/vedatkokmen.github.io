@@ -2,7 +2,7 @@ import Head from "next/head";
 import About from "../src/components/About";
 import Hero from "../src/components/Hero";
 import Services from "../src/components/Services";
-import Skills from "../src/components/Skills";
+import Portfolio from "../src/components/Portfolio";
 import Layout from "../src/components/Layout";
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
         <Hero />
         <About />
         <Services />
-        <Skills />
+        <Portfolio />
       </Layout>
     </div>
   );

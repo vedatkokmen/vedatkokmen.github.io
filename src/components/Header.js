@@ -38,8 +38,8 @@ function Header() {
               </Link>
             </li>
             <li>
-              <Link href="#skills" passHref>
-                <a>skills</a>
+              <Link href="#portfolio" passHref>
+                <a>portfolio</a>
               </Link>
             </li>
           </ul>
@@ -73,8 +73,8 @@ function Header() {
               </Link>
             </li>
             <li onClick={() => setShowSideBar(!showSideBar)}>
-              <Link href="#skills" passHref>
-                <a>skills</a>
+              <Link href="#portfolio" passHref>
+                <a>portfolio</a>
               </Link>
             </li>
           </ul>
@@ -133,8 +133,8 @@ function Header() {
             </Link>
           </li>
           <li>
-            <Link href="#skills">
-              <a>Skills</a>
+            <Link href="#portfolio">
+              <a>portfolio</a>
             </Link>
           </li>
         </ul>

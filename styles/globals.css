@@ -196,6 +196,10 @@ Navbar
   align-items: center;
   -webkit-transition: var(--transition);
   transition: var(--transition);
+  position: sticky;
+  top: 0;
+  background-color: ghostwhite;
+  z-index: 1000;
 }
 .nav-center {
   width: 100%;
@@ -674,11 +678,11 @@ Connect
 }
 /*
 ===============
-Skills
+Portfolio
 ===============
 */
 @media screen and (min-width: 768px) {
-  .skills-center {
+  .portfolio-center {
     display: grid;
     grid-template-columns: 1fr 1fr;
     -webkit-column-gap: 2rem;
@@ -686,10 +690,10 @@ Skills
     column-gap: 2rem;
   }
 }
-.skills {
+.portfolio {
   background: var(--clr-primary-9);
 }
-.skills h3 {
+.portfolio h3 {
   margin: 1.5rem 0;
   color: var(--clr-primary-1);
 }

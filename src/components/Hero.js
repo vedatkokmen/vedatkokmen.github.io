@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
-import { forwardRef } from "react";
 import Image from "next/image";
+import { forwardRef } from "react";
+import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const MyButton = forwardRef(({ onClick, href, children }, ref) => {
   return (
