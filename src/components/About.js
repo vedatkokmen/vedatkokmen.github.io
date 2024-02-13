@@ -19,10 +19,10 @@ function About() {
             <div className="underline"></div>
           </div>
           <p>
-            Hi, I'm Vedat, a results-driven full-stack developer specializing in React, ASP.NET, and Node.js. With nearly 2 years of hands-on experience, I craft efficient and engaging web applications.
+            Hi, I am Vedat, a results-driven full-stack developer specializing in React, ASP.NET, and Node.js. With nearly 2 years of hands-on experience, I craft efficient and engaging web applications.
           </p>
           <p>
-            I focus on delivering clean code, optimal performance, and user-centric experiences. Let's collaborate to bring your digital projects to life.
+            I focus on delivering clean code, optimal performance, and user-centric experiences. Let us collaborate to bring your digital projects to life.
           </p>
         </article>
       </div>
