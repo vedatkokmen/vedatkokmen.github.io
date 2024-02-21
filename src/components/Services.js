@@ -14,11 +14,7 @@ function Services() {
           <h4>web development</h4>
           <div className="underline"></div>
           <p>
-            With three years of coding experience, I am eager to embark on a
-            career in web development. I am looking for opportunities to gain
-            practical experience, collaborate in both team and individual
-            settings, enhance my skills, and master my current abilities.
-            Although I am currently employed, I am open to new prospects.
+          Results-driven web developer with a proven track record of delivering high-quality solutions in C#, .NET, React, and TypeScript. With two years of hands-on experience and a strong foundation in full-stack development, I am committed to driving innovation, collaborating effectively in team environments, and continuously expanding my skill set. Passionate about leveraging technology to solve complex problems and eager to explore new opportunities for growth and advancement in the field of web development.
           </p>
         </article>
 

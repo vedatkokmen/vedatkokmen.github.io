@@ -18,7 +18,7 @@ function Hero() {
         <article className="hero-info">
           <div className="underline"></div>
           <h1>i am vedat</h1>
-          <h4>web developer | translator</h4>
+          <h4>full-stack developer | proofreader</h4>
           <Link href="mailto:vedatkoekmen@gmail.com" passHref>
             <a target="_blank" rel="noopener noreferrer">
               <button className="btn hero-btn">contact me</button>

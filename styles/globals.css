@@ -313,8 +313,8 @@ Sidebar
   display: grid;
   margin-top: 3rem;
   width: 20rem;
-  grid-template-columns: repeat(5, 1fr);
-  justify-items: center;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center
 }
 .social-icon {
   font-size: 1.5rem;
@@ -695,7 +695,13 @@ Portfolio
 }
 .portfolio h3 {
   margin: 1.5rem 0;
+  text-align: center;
   color: var(--clr-primary-1);
+}
+.article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .skill {
   margin-bottom: 1.25rem;
