@@ -1,69 +1,63 @@
-import Link from "next/link";
-import Image from "next/image";
-import { forwardRef } from "react";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
-
-const MyButton = forwardRef(({ onClick, href, children }, ref) => {
-  return (
-    <a href={href} onClick={onClick} ref={ref}>
-      {children}
-    </a>
-  );
-});
+import Link from 'next/link';
+import { FiArrowRight } from 'react-icons/fi';
 
 function Hero() {
   return (
     <header className="hero">
-      <div className="section-center hero-center">
-        <article className="hero-info">
-          <div className="underline"></div>
-          <h1>i am vedat</h1>
-          <h4>full-stack developer | proofreader</h4>
-          <Link href="mailto:vedatkoekmen@gmail.com" passHref>
-            <a target="_blank" rel="noopener noreferrer">
-              <button className="btn hero-btn">contact me</button>
-            </a>
-          </Link>
-          {/* <!-- social icons --> */}
-          <ul className="social-icons hero-icons">
-            <li>
-              <Link href="https://www.github.com/vedatkokmen" passHref>
-                <a target="_blank" rel="noopener noreferrer">
-                  <MyButton>
-                    <FaGithub className="social-icon" />
-                  </MyButton>
-                </a>
+      <div className="hero-bg">
+        <div className="hero-grid">
+          {[...Array(8)].map((_, i) => (
+            <div key={i} className="hero-grid-line" />
+          ))}
+        </div>
+        <div className="hero-accent-1" />
+        <div className="hero-accent-2" />
+        <div className="hero-noise" />
+      </div>
+      <div className="container">
+        <div className="hero-inner">
+          <div className="hero-content">
+            <div className="hero-badge animate-in">
+              <span className="hero-badge-dot" />
+              Available for work
+            </div>
+            <span className="hero-label animate-in animate-delay-1">Full-Stack Developer</span>
+            <h1 className="hero-title animate-in animate-delay-2">
+              <span className="line">Vedat</span>
+              <span className="line">Kökmen<span className="highlight">.</span></span>
+            </h1>
+            <p className="hero-description animate-in animate-delay-3">
+              I build scalable web applications with clean code, intuitive design,
+              and performance at the forefront. Specialized in React, .NET, and modern architecture.
+            </p>
+            <div className="hero-actions animate-in animate-delay-4">
+              <Link href="#portfolio" className="btn btn-primary">
+                View Work <FiArrowRight />
               </Link>
-            </li>
-            <li>
-              <Link href="https://www.linkedin.com/in/vedatkokmen" passHref>
-                <a target="_blank" rel="noopener noreferrer">
-                  <MyButton>
-                    <FaLinkedin className="social-icon" />
-                  </MyButton>
-                </a>
+              <Link href="#contact" className="btn btn-outline">
+                Get in Touch
               </Link>
-            </li>
-            <li>
-              <Link href="https://www.instagram.com/vedatkokmen" passHref>
-                <a target="_blank" rel="noopener noreferrer">
-                  <MyButton>
-                    <FaInstagram className="social-icon" />
-                  </MyButton>
-                </a>
-              </Link>
-            </li>
-          </ul>
-        </article>
-        <article className="hero-img">
-          <Image
-            src="/5.jpg"
-            className="hero-photo"
-            alt="vedat kokmen"
-            height="450"
-            width="300"
-          />
-        </article>
+            </div>
+            <div className="hero-meta animate-in animate-delay-4">
+              <div className="hero-stat">
+                <div className="hero-stat-number">5</div>
+                <div className="hero-stat-label">Years</div>
+              </div>
+              <div className="hero-stat">
+                <div className="hero-stat-number">10+</div>
+                <div className="hero-stat-label">Projects</div>
+              </div>
+              <div className="hero-stat">
+                <div className="hero-stat-number">100%</div>
+                <div className="hero-stat-label">Dedicated</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="hero-scroll-indicator animate-in animate-delay-5">
+        <span className="hero-scroll-text">Scroll</span>
+        <div className="hero-scroll-line" />
       </div>
     </header>
   );

@@ -1,35 +1,38 @@
-import { FaCode } from "react-icons/fa";
-import { MdTranslate } from "react-icons/md";
-
 function Services() {
-  return (
-    <section className="section bg-grey" id="services">
-      <div className="section-title">
-        <h2>services</h2>
-        <div className="underline"></div>
-      </div>
-      <div className="services-center section-center">
-        <article className="service">
-          <FaCode className="service-icon" />
-          <h4>web development</h4>
-          <div className="underline"></div>
-          <p>
-          Results-driven web developer with a proven track record of delivering high-quality solutions in C#, .NET, React, and TypeScript. With two years of hands-on experience and a strong foundation in full-stack development, I am committed to driving innovation, collaborating effectively in team environments, and continuously expanding my skill set. Passionate about leveraging technology to solve complex problems and eager to explore new opportunities for growth and advancement in the field of web development.
-          </p>
-        </article>
+  const services = [
+    {
+      number: '01',
+      title: 'Full-Stack Development',
+      description: 'End-to-end web application development using modern frameworks and architectures. From database design to responsive frontends, I build complete solutions that scale.'
+    },
+    {
+      number: '02',
+      title: 'API Design & Integration',
+      description: 'RESTful and GraphQL API design with focus on performance, security, and developer experience. Seamless integration with third-party services and microservices.'
+    },
+    {
+      number: '03',
+      title: 'Code Architecture',
+      description: 'Clean, maintainable code with modern best practices. Test-driven development, documentation, and scalable architecture patterns that stand the test of time.'
+    }
+  ];
 
-        <article className="service">
-          <MdTranslate className="service-icon" />
-          <h4>translation/review</h4>
-          <div className="underline"></div>
-          <p>
-            Specializing in translating and reviewing UI and UA strings,
-            operator manuals, workshop service manuals, and user manuals for
-            leading international clients in the automotive and technology
-            industries, from English to Turkish. Additionally, I provide
-            post-editing and quality assurance services.
-          </p>
-        </article>
+  return (
+    <section className="section services" id="services">
+      <div className="container">
+        <div className="section-header">
+          <span className="section-label">Services</span>
+          <h2 className="section-title">What I Do</h2>
+        </div>
+        <div className="services-grid">
+          {services.map((service, index) => (
+            <article key={index} className="service-card">
+              <span className="service-number">{service.number}</span>
+              <h3 className="service-title">{service.title}</h3>
+              <p className="service-description">{service.description}</p>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );

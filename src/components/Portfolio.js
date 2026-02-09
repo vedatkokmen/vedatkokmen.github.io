@@ -1,40 +1,51 @@
-import { forwardRef } from "react";
-import Link from "next/link";
-import Image from "next/image";
-
-const MyButton = forwardRef(({ onClick, href, children }, ref) => {
-  return (
-    <a href={href} onClick={onClick} ref={ref}>
-      {children}
-    </a>
-  );
-});
+import Link from 'next/link';
+import Image from 'next/image';
 
 function Portfolio() {
+  const projects = [
+    {
+      title: 'External User Manager',
+      description: 'A comprehensive Microsoft Teams governance solution for managing external users. Built with modern web technologies and integrated with Microsoft 365 APIs.',
+      image: '/eum-screenshot.png',
+      tags: ['React', 'TypeScript', 'Microsoft Graph API', 'Azure'],
+      link: 'https://appsource.microsoft.com/en-us/product/office/wa200003014'
+    }
+  ];
+
   return (
     <section className="section portfolio" id="portfolio">
-      <div className="section-title">
-        <h2>portfolio</h2>
-        <div className="underline"></div>
-      </div>
-      <div className="section-center" style={{ gap: '20px' }} >
-        <article className="article" >
-          <Link href="https://appsource.microsoft.com/en-us/product/office/wa200003014?tab=overview" passHref>
-            <a target="_blank" rel="noopener noreferrer">
-              <MyButton>
-                <Image
-                  width={500}
-                  height={500}
-                  style={{ objectFit: "contain" }}
-                  src="/eum.jpg"
-                  className="hero-photo"
-                  alt="about img"
-                />
-              </MyButton>
-            <h3>External User Manager</h3>
-            </a>
-          </Link>
-        </article>
+      <div className="container">
+        <div className="section-header">
+          <span className="section-label">Work</span>
+          <h2 className="section-title">Featured Projects</h2>
+        </div>
+        <div className="portfolio-grid">
+          {projects.map((project, index) => (
+            <article key={index} className="portfolio-card">
+              <Link
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="portfolio-image-wrapper">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="portfolio-image"
+                  />
+                  <span className="portfolio-badge">Featured</span>
+                </div>
+                <div className="portfolio-content">
+                  <h3 className="portfolio-title">{project.title}</h3>
+                  <p className="portfolio-description">{project.description}</p>
+                  <span className="portfolio-link">View Project</span>
+                </div>
+              </Link>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
