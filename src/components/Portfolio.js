@@ -9,6 +9,24 @@ function Portfolio() {
       image: '/eum-screenshot.png',
       tags: ['React', 'TypeScript', 'Microsoft Graph API', 'Azure'],
       link: 'https://appsource.microsoft.com/en-us/product/office/wa200003014'
+    },
+    {
+      title: 'Runway Lite',
+      description: 'A lightweight runway + cashflow calculator for bootstrapped founders (6‑month forecast + break-even MRR)',
+      tags: ['React', 'TypeScript'],
+      link: 'https://vedatkokmen.github.io/runwaylite/'
+    },
+    {
+      title: 'First10',
+      description: 'A one-page outreach tracker for indie hackers to consistently run daily outreach and land their first users.',
+      tags: ['React', 'TypeScript'],
+      link: 'https://vedatkokmen.github.io/first10-users/'
+    },
+    {
+      title: 'LessonPulse',
+      description: 'A one-page tool that turns a topic list + class length into a timed lesson plan with built-in engagement check-ins.',
+      tags: ['React', 'TypeScript'],
+      link: 'https://vedatkokmen.github.io/lessonpulse/'
     }
   ];
 
