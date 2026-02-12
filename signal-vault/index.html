@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Signal Vault — Solo Founder Research Organizer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+  <div class="max-w-6xl mx-auto px-4 py-10">
+    <header class="mb-8">
+      <p class="text-xs uppercase tracking-[0.2em] text-slate-400">Solopreneur Research OS</p>
+      <h1 class="text-3xl md:text-4xl font-semibold mt-2">Signal Vault</h1>
+      <p class="text-slate-300 mt-2 max-w-2xl">Stop collecting founder case studies in random docs. Capture each signal once, score it, and auto‑build a weekly study + action queue.</p>
+    </header>
+
+    <section class="grid lg:grid-cols-[1.2fr_1fr] gap-6">
+      <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-6">
+        <div class="flex items-start justify-between">
+          <div>
+            <h2 class="text-lg font-semibold">Add a signal</h2>
+            <p class="text-sm text-slate-400 mt-1">Capture a founder story or growth thread in 60 seconds.</p>
+          </div>
+          <span class="text-xs text-slate-500">No logins · Local only</span>
+        </div>
+
+        <div class="mt-5 grid gap-4">
+          <div>
+            <label class="text-xs uppercase text-slate-500">Source URL</label>
+            <input id="source" class="w-full mt-1 px-3 py-2 rounded-lg bg-slate-950 border border-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="https://reddit.com/..." />
+          </div>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div>
+              <label class="text-xs uppercase text-slate-500">Channel</label>
+              <select id="channel" class="w-full mt-1 px-3 py-2 rounded-lg bg-slate-950 border border-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <option value="">Select channel</option>
+                <option>SEO</option>
+                <option>Cold outreach</option>
+                <option>Communities</option>
+                <option>Partnerships</option>
+                <option>Paid ads</option>
+                <option>Product-led growth</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs uppercase text-slate-500">Proof / Revenue</label>
+              <input id="proof" class="w-full mt-1 px-3 py-2 rounded-lg bg-slate-950 border border-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="$10k MRR, 200 users" />
+            </div>
+          </div>
+          <div>
+            <label class="text-xs uppercase text-slate-500">Key insight</label>
+            <textarea id="insight" rows="3" class="w-full mt-1 px-3 py-2 rounded-lg bg-slate-950 border border-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="What made this work? What would you copy?"></textarea>
+          </div>
+          <div>
+            <label class="text-xs uppercase text-slate-500">Next action to copy</label>
+            <input id="action" class="w-full mt-1 px-3 py-2 rounded-lg bg-slate-950 border border-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Write 3 SEO pages targeting [keyword]" />
+          </div>
+        </div>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <button id="add" class="px-5 py-2 rounded-lg bg-indigo-500 hover:bg-indigo-400 text-white font-medium">Add to vault</button>
+          <button id="clear" class="px-5 py-2 rounded-lg border border-slate-700 text-slate-200 hover:bg-slate-800">Clear form</button>
+          <p id="error" class="text-sm text-rose-300 hidden">Please add a source, insight, and next action.</p>
+        </div>
+      </div>
+
+      <div class="bg-slate-900/70 border border-slate-800 rounded-2xl p-6">
+        <h2 class="text-lg font-semibold">Weekly study queue</h2>
+        <p class="text-sm text-slate-400 mt-1">Auto‑ranks your best signals into a 3‑session plan.</p>
+        <div class="mt-4 space-y-3 text-sm" id="queue">
+          <div class="border border-dashed border-slate-700 rounded-xl p-4 text-slate-400">No signals yet. Add 3+ to generate a queue.</div>
+        </div>
+        <button id="generate" class="mt-4 w-full py-2 rounded-lg bg-emerald-500/90 hover:bg-emerald-400 text-slate-950 font-semibold">Generate weekly queue</button>
+        <button id="copy" class="mt-3 w-full py-2 rounded-lg border border-emerald-500 text-emerald-200 hover:bg-emerald-500/10">Copy queue</button>
+        <p id="queueError" class="text-sm text-rose-300 mt-3 hidden">Add at least 1 signal before generating.</p>
+      </div>
+    </section>
+
+    <section class="mt-8">
+      <div class="flex items-center justify-between">
+        <h2 class="text-lg font-semibold">Vault</h2>
+        <p class="text-xs text-slate-500">Score = proof + channel + insight depth</p>
+      </div>
+      <div id="vault" class="mt-4 grid md:grid-cols-2 xl:grid-cols-3 gap-4"></div>
+    </section>
+
+    <footer class="mt-10 text-xs text-slate-500">Data stays in your browser (local storage). Delete signals anytime.</footer>
+  </div>
+
+  <script>
+    const state = JSON.parse(localStorage.getItem('signal-vault')) || [];
+    const vaultEl = document.getElementById('vault');
+    const queueEl = document.getElementById('queue');
+    const errorEl = document.getElementById('error');
+    const queueErrorEl = document.getElementById('queueError');
+
+    const scoreSignal = (signal) => {
+      let score = 0;
+      if (signal.proof.trim()) score += 3;
+      if (signal.channel) score += 2;
+      if (signal.insight.trim().length > 60) score += 2;
+      if (signal.insight.trim().length > 20) score += 1;
+      if (signal.action.trim().length > 25) score += 1;
+      return score;
+    };
+
+    const save = () => localStorage.setItem('signal-vault', JSON.stringify(state));
+
+    const renderVault = () => {
+      if (!state.length) {
+        vaultEl.innerHTML = '<div class="text-sm text-slate-400">No signals stored yet.</div>';
+        return;
+      }
+      vaultEl.innerHTML = '';
+      state.forEach((signal) => {
+        const card = document.createElement('div');
+        card.className = 'border border-slate-800 rounded-2xl p-4 bg-slate-900/60';
+        card.innerHTML = `
+          <div class="flex items-start justify-between">
+            <div>
+              <p class="text-xs text-slate-500 uppercase">${signal.channel || 'Unassigned channel'}</p>
+              <p class="font-semibold mt-1">${signal.proof || 'No proof yet'}</p>
+            </div>
+            <span class="text-xs px-2 py-1 rounded-full bg-indigo-500/10 text-indigo-200">Score ${signal.score}</span>
+          </div>
+          <a href="${signal.source}" target="_blank" class="text-xs text-slate-400 mt-2 inline-block break-all">${signal.source}</a>
+          <p class="text-sm text-slate-200 mt-3">${signal.insight}</p>
+          <p class="text-sm text-emerald-200 mt-3">Next: ${signal.action}</p>
+          <button data-id="${signal.id}" class="mt-4 text-xs text-rose-300 hover:text-rose-200">Remove</button>
+        `;
+        vaultEl.appendChild(card);
+      });
+
+      document.querySelectorAll('button[data-id]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = state.findIndex(s => s.id === btn.dataset.id);
+          if (idx > -1) state.splice(idx, 1);
+          save();
+          renderVault();
+        });
+      });
+    };
+
+    const buildQueue = () => {
+      if (!state.length) {
+        queueErrorEl.classList.remove('hidden');
+        return;
+      }
+      queueErrorEl.classList.add('hidden');
+      const ranked = [...state].sort((a, b) => b.score - a.score).slice(0, 5);
+      const channels = [...new Set(ranked.map(item => item.channel).filter(Boolean))];
+      queueEl.innerHTML = ranked.map((item, idx) => `
+        <div class="border border-slate-800 rounded-xl p-3 bg-slate-950/60">
+          <p class="text-xs text-slate-500">Session ${idx + 1}</p>
+          <p class="text-sm font-semibold mt-1">${item.action}</p>
+          <p class="text-xs text-slate-400 mt-2">${item.proof || 'No proof listed'} · ${item.channel || 'Unassigned'}</p>
+        </div>
+      `).join('');
+
+      if (!channels.length) {
+        queueEl.innerHTML += `<div class="text-xs text-slate-400 mt-3">Add channels to see your best distribution.</div>`;
+      } else {
+        queueEl.innerHTML += `<div class="text-xs text-slate-400 mt-3">Channel mix: ${channels.join(', ')}</div>`;
+      }
+    };
+
+    document.getElementById('add').addEventListener('click', () => {
+      const source = document.getElementById('source').value.trim();
+      const channel = document.getElementById('channel').value;
+      const proof = document.getElementById('proof').value.trim();
+      const insight = document.getElementById('insight').value.trim();
+      const action = document.getElementById('action').value.trim();
+
+      if (!source || !insight || !action) {
+        errorEl.classList.remove('hidden');
+        return;
+      }
+      errorEl.classList.add('hidden');
+
+      const signal = {
+        id: crypto.randomUUID(),
+        source,
+        channel,
+        proof,
+        insight,
+        action,
+        score: 0,
+        createdAt: new Date().toISOString()
+      };
+      signal.score = scoreSignal(signal);
+      state.unshift(signal);
+      save();
+      renderVault();
+
+      document.getElementById('source').value = '';
+      document.getElementById('channel').value = '';
+      document.getElementById('proof').value = '';
+      document.getElementById('insight').value = '';
+      document.getElementById('action').value = '';
+    });
+
+    document.getElementById('clear').addEventListener('click', () => {
+      ['source', 'channel', 'proof', 'insight', 'action'].forEach(id => {
+        const el = document.getElementById(id);
+        if (el.tagName === 'SELECT') el.value = '';
+        else el.value = '';
+      });
+      errorEl.classList.add('hidden');
+    });
+
+    document.getElementById('generate').addEventListener('click', buildQueue);
+
+    document.getElementById('copy').addEventListener('click', async () => {
+      const text = queueEl.innerText.trim();
+      if (!text) {
+        queueErrorEl.classList.remove('hidden');
+        return;
+      }
+      try {
+        await navigator.clipboard.writeText(text);
+        document.getElementById('copy').textContent = 'Copied!';
+        setTimeout(() => (document.getElementById('copy').textContent = 'Copy queue'), 1500);
+      } catch (err) {
+        alert('Copy failed.');
+      }
+    });
+
+    renderVault();
+  </script>
+</body>
+</html>
