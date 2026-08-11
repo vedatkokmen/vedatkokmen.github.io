@@ -9,17 +9,20 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>Vedat Kokmen | Full-Stack Developer</title>
+        <title>Vedat Kokmen | Full-Stack AI Engineer</title>
         <meta
           name="description"
-          content="Portfolio of Vedat Kokmen - Full-stack developer specializing in React, ASP.NET, and Node.js with experience crafting efficient web applications."
+          content="Vedat Kokmen is a full-stack AI engineer building production software with React, TypeScript, .NET and AI-native development workflows."
         />
         <meta
           name="keywords"
-          content="web developer, portfolio, vedat kökmen, full-stack developer, react, asp.net, node.js, typescript"
+          content="Vedat Kökmen, full-stack AI engineer, AI agents, agentic development, React, TypeScript, .NET, C#, Microsoft 365, Microsoft Graph, Azure"
         />
-        <meta property="og:title" content="Vedat Kokmen | Full-Stack Developer" />
-        <meta property="og:description" content="Full-stack developer specializing in React, ASP.NET, and Node.js" />
+        <meta property="og:title" content="Vedat Kokmen | Full-Stack AI Engineer" />
+        <meta
+          property="og:description"
+          content="Full-stack AI engineer building production software with React, TypeScript, .NET and AI-native development workflows."
+        />
         <meta property="og:type" content="website" />
         <link rel="icon" href="/logo.png" />
       </Head>

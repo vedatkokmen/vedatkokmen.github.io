@@ -2,18 +2,18 @@ function Services() {
   const services = [
     {
       number: '01',
-      title: 'Full-Stack Development',
-      description: 'End-to-end web application development using modern frameworks and architectures. From database design to responsive frontends, I build complete solutions that scale.'
+      title: 'AI-Native Product Development',
+      description: 'Build production applications using AI agents throughout planning, implementation, testing, debugging, and iteration — not just code completion.'
     },
     {
       number: '02',
-      title: 'API Design & Integration',
-      description: 'RESTful and GraphQL API design with focus on performance, security, and developer experience. Seamless integration with third-party services and microservices.'
+      title: 'Full-Stack Engineering',
+      description: 'End-to-end React, TypeScript, and .NET development with scalable APIs, databases, integrations, and cloud infrastructure.'
     },
     {
       number: '03',
-      title: 'Code Architecture',
-      description: 'Clean, maintainable code with modern best practices. Test-driven development, documentation, and scalable architecture patterns that stand the test of time.'
+      title: 'Product Engineering',
+      description: 'Take ideas from requirements to production: architecture, implementation, validation, deployment, and continuous iteration with a strong focus on outcomes.'
     }
   ];
 
@@ -21,8 +21,8 @@ function Services() {
     <section className="section services" id="services">
       <div className="container">
         <div className="section-header">
-          <span className="section-label">Services</span>
-          <h2 className="section-title">What I Do</h2>
+          <span className="section-label">What I Do</span>
+          <h2 className="section-title">Build. Automate. Ship.</h2>
         </div>
         <div className="services-grid">
           {services.map((service, index) => (

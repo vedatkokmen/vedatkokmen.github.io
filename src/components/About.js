@@ -3,9 +3,9 @@ import Link from 'next/link';
 
 function About() {
   const skills = [
+    'AI Agents', 'Agentic Development', 'Claude Code',
     'React', 'TypeScript', 'Next.js', 'C#', '.NET',
-    'Node.js', 'PostgreSQL', 'REST APIs', 'GraphQL',
-    'Tailwind', 'Docker', 'Git'
+    'Node.js', 'REST APIs', 'Microsoft Graph', 'Azure'
   ];
 
   return (
@@ -22,19 +22,23 @@ function About() {
           </div>
           <div className="about-content">
             <span className="section-label">About Me</span>
-            <h2 className="section-title">Building with purpose and precision</h2>
+            <h2 className="section-title">Building software differently</h2>
             <p className="about-text">
-              I&apos;m a results-driven full-stack developer specializing in C#, React, ASP.NET, and Node.js.
-              With 5 years of hands-on experience, I craft efficient and engaging web applications,
-              focusing on clean code, optimal performance, and user-centric experiences.
+              I&apos;m a full-stack engineer specializing in React, TypeScript, C#, and .NET,
+              with experience building enterprise Microsoft 365 governance applications and
+              independent products from the ground up.
             </p>
             <p className="about-highlight">
-              &quot;I don&apos;t just write code; I build solutions that make a difference.&quot;
+              &quot;The valuable part of engineering is increasingly about reasoning, architecture,
+              validation, and outcomes — not manually producing every line of code.&quot;
             </p>
             <p className="about-text">
-              My approach combines technical expertise with a passion for continuous learning.
-              I stay current with modern best practices and apply them to solve complex problems,
-              delivering tangible value through scalable, maintainable architecture.
+              My development workflow is now heavily AI-native. I use AI agents, including
+              Claude Code, throughout the software lifecycle: understanding requirements,
+              exploring existing codebases, planning implementations, writing and refactoring
+              code, generating tests, investigating bugs, and iterating on features.
+              This has significantly reduced development time and helped reduce bugs while
+              letting me focus more on product decisions and system design.
             </p>
             <div className="about-tags">
               {skills.map((skill) => (
